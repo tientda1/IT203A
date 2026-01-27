@@ -1,30 +1,34 @@
 import java.util.Scanner;
 
 public class Ex1 {
-    public static int searchBooks(String[] arr, String search) {
+    public static int[] addBookToLibraries(int n) {
+        Scanner sc = new Scanner(System.in);
+        int[] books = new int[n];
+        System.out.println("--- Bắt đầu nhập mã sách ---");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Nhập mã sách thứ " + (i + 1) + ": ");
+            books[i] = sc.nextInt();
+        }
+        return books;
+    }
+    public static void displayLibraries(int[] arr) {
+        System.out.print("Danh sách mã sách hiện có: ");
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i].equalsIgnoreCase(search)) {
-                return i;
+            System.out.print(arr[i]);
+            if (i < arr.length - 1) {
+                System.out.print(", ");
             }
         }
-        return -1;
+        System.out.println();
     }
     public static void main(String[] args) {
-        String[] books = {
-                "Java Basic",
-                "Python Intro",
-                "C Programming",
-                "Data Structures",
-                "Database System"
-        };
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập tên sách cần tìm: ");
-        String search = sc.nextLine();
-        int index = searchBooks(books, search);
-        if (index != -1) {
-            System.out.println("Tìm thấy tại vị trí " + index);
-        } else {
-            System.out.println("Sách không tồn tại");
-        }
+
+        System.out.print("Nhập số lượng sách cần thêm (n): ");
+        int n = sc.nextInt();
+        int[] isbnList = addBookToLibraries(n);
+
+        System.out.println("\n--- Kết quả kiểm kê ---");
+        displayLibraries(isbnList);
     }
 }
