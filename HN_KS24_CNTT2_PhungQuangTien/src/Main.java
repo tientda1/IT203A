@@ -133,7 +133,7 @@ public class Main {
                             count--;
                             System.out.println("Đã xóa thành công: " + studentDel);
                         } else {
-                            System.out.println("Lỗi: Không tìm thấy MSSV này!");
+                            System.out.println("Không tìm thấy MSSV này!");
                         }
                     }
                     break;
