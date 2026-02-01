@@ -4,7 +4,6 @@ public class Ex1 {
     static String normalizeSpaces(String s) {
         return s.trim().replaceAll("\\s+", " ");
     }
-
     static String capitalizeWords(String s) {
         s = normalizeSpaces(s).toLowerCase();
         String[] words = s.split(" ");
